@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class DescricaoTrajetoViewController: UIViewController {
 
@@ -14,14 +15,13 @@ class DescricaoTrajetoViewController: UIViewController {
     
     @IBOutlet weak var lblRoute: UILabel!
     @IBOutlet weak var lblTime: UILabel!
-    @IBOutlet weak var imgRoute: UIImageView!
     
+    @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.lblRoute.text = obj![0]
         self.lblTime.text = obj![1]
-        self.imgRoute.image = UIImage(named: obj![2])
         // Do any additional setup after loading the view.
     }
 

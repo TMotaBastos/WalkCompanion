@@ -234,10 +234,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97w-eC-eVc">
-                                <rect key="frame" x="16" y="130" width="343" height="401"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pessoas que irão com você" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSW-rh-kzt">
                                 <rect key="frame" x="16" y="548" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -245,13 +241,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Id-RK-3cI">
+                                <rect key="frame" x="16" y="128" width="343" height="410"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="imgRoute" destination="97w-eC-eVc" id="f55-Fa-kR4"/>
                         <outlet property="lblRoute" destination="pOU-2o-dnM" id="mu9-Ua-11Q"/>
                         <outlet property="lblTime" destination="h7K-Ly-IA7" id="ZZ7-Mk-C4M"/>
+                        <outlet property="mapView" destination="6Id-RK-3cI" id="MN9-7C-0qT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Kw-e5-pjo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -283,7 +283,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t7Z-JD-PfK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Configurações" id="vO2-aG-PfV"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rMH-xw-FnC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rMH-xw-FnC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -299,11 +299,10 @@
         <!--Criar-->
         <scene sceneID="tVU-aO-Q2z">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eXR-sX-CuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dtz-h5-u19" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Criar" id="DTb-xC-iu5"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gwu-ch-S6i">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gwu-ch-S6i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -312,6 +311,7 @@
                         <segue destination="KjF-o7-PGl" kind="relationship" relationship="rootViewController" id="xQK-DR-0Tl"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXR-sX-CuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1290" y="1145"/>
         </scene>
@@ -321,7 +321,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v2X-sL-FB9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trajetos Ativos" id="ePh-Cl-w7k"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NVb-N7-FKs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NVb-N7-FKs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
