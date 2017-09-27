@@ -8,13 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var txtEmail: UITextField!
-    @IBOutlet weak var txtSenha: UITextField!
-    @IBOutlet weak var btnLogin: UIButton!
-   
-
+class ViewController: UIViewController {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
@@ -23,8 +17,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.txtEmail.delegate = self
-        self.txtSenha.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
