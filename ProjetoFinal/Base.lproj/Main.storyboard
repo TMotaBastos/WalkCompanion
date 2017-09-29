@@ -58,7 +58,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="dPf-KT-tmd" kind="presentation" id="fqX-6P-zgt"/>
+                                    <action selector="handleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pDy-TF-cJL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,6 +69,7 @@
                         <outlet property="btnLogin" destination="gw6-x0-WvA" id="uxp-sp-Edb"/>
                         <outlet property="txtEmail" destination="oPW-Xf-nKj" id="kjT-NV-Crf"/>
                         <outlet property="txtSenha" destination="oUB-Wd-59O" id="VBI-1B-lsa"/>
+                        <segue destination="dPf-KT-tmd" kind="presentation" identifier="loginSucedido" id="aLB-ua-iPf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -170,6 +171,9 @@
                                 <rect key="frame" x="170" y="299" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Criar"/>
+                                <connections>
+                                    <action selector="handleCriar:" destination="KjF-o7-PGl" eventType="touchUpInside" id="1EM-HA-cel"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mg-2K-ecJ">
                                 <rect key="frame" x="91" y="92" width="268" height="48"/>
@@ -238,6 +242,7 @@
                     <connections>
                         <outlet property="chegadaBtn" destination="Yvt-dH-xj8" id="d86-oI-khb"/>
                         <outlet property="chegadaPicker" destination="IWB-1m-82h" id="N9b-lz-X3U"/>
+                        <outlet property="criarBtn" destination="v96-Bf-l8o" id="PaY-ag-RxH"/>
                         <outlet property="datePicker" destination="2Tc-j0-LSm" id="c1A-Ur-Eci"/>
                         <outlet property="horarioBtn" destination="BtU-eq-MQU" id="HUr-Uu-14o"/>
                         <outlet property="saidaBtn" destination="9mg-2K-ecJ" id="Nyc-5J-7mY"/>
@@ -482,6 +487,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fqX-6P-zgt"/>
+        <segue reference="aLB-ua-iPf"/>
     </inferredMetricsTieBreakers>
 </document>

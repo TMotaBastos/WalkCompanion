@@ -18,6 +18,8 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var chegadaBtn: UIButton!
     @IBOutlet weak var horarioBtn: UIButton!
     
+    @IBOutlet weak var criarBtn: UIButton!
+    
     let pickerData = ["CCEN - Parada Externa",
                        "CIn - Saída Principal",
                        "CTG - Parada Externa",
@@ -116,6 +118,10 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
         self.saidaPicker.isHidden = true
         self.chegadaPicker.isHidden = true
         self.datePicker.isHidden = true
+    }
+    
+    @IBAction func handleCriar(_ sender: Any) {
+    
     }
     
     /*

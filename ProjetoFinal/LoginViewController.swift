@@ -32,6 +32,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func handleLogin(_ sender: Any) {
+    }
 
     /*
     // MARK: - Navigation
