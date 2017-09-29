@@ -22,7 +22,7 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
                        "CIn - Saída Principal",
                        "CTG - Parada Externa",
                        "CAC/CFCH - Parada Externa",
-                       "CTG/Oceanografia - Parada Interna",
+                       "CTG - Parada Interna",
                        "Niate CTG",
                        "CTG/Oceanografia - Entrada Principal",
                        "Area 2",
