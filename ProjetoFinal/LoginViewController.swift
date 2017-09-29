@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -33,6 +34,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func handleLogin(_ sender: Any) {
+        let email = txtEmail.text
+        let senha = txtSenha.text
+        
+        Auth.auth().signIn(withEmail: email!, password: senha!) { (user, error) in
+            if error == nil {
+                self.performSegue(withIdentifier: "loginSucedido", sender: self)
+            } else {
+                print(error)
+                var message:String = ""
+                
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
+                    switch errCode {
+                    case .invalidEmail:
+                        message = "E-mail inválido!"
+                    case .wrongPassword:
+                        message = "E-mail ou senha errados!"
+                    case .userNotFound:
+                        message = "E-mail ou senha errados!"
+                    default:
+                        print("none")
+                    }
+                }
+                
+                let alert = UIAlertController(title: "Erro", message: message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
     /*
