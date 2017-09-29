@@ -8,7 +8,6 @@
 
 import UIKit
 import FirebaseAuth
-import FirebaseDatabase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -40,9 +39,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         Auth.auth().signIn(withEmail: email!, password: senha!) { (user, error) in
             if error == nil {
-                let storage = Database.database().reference()
-                let usersRef = storage.child("users")
-                
                 self.performSegue(withIdentifier: "loginSucedido", sender: self)
             } else {
                 print(error)
