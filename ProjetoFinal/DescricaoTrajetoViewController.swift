@@ -9,16 +9,18 @@
 import UIKit
 import MapKit
 
-class DescricaoTrajetoViewController: UIViewController {
+class DescricaoTrajetoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var obj:[String]?
     
     @IBOutlet weak var lblRoute: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     
+    @IBOutlet weak var PessoasCollection: UICollectionView!
     @IBOutlet weak var mapView: MKMapView!
     var pinos:[Pinos] = []
-    //let pino:Pinos = Pinos(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>, nome: <#T##String#>)
+    var pessoas = [["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"]]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,8 @@ class DescricaoTrajetoViewController: UIViewController {
         self.lblRoute.text = obj![0]
         self.lblTime.text = obj![1]
         initPinos()
+        self.PessoasCollection.delegate = self
+        self.PessoasCollection.dataSource = self
         //pino.adcPonto(mapView,pinos)
         
     }
@@ -59,6 +63,17 @@ class DescricaoTrajetoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return pessoas.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pessoas", for: indexPath) as! PessoasCollectionViewCell
+        
+        cell.fotoPessoa.image = UIImage (named: pessoas[indexPath.row][0])
+        cell.nome.text = pessoas[indexPath.row][1]
+        return cell
     }
     
     
