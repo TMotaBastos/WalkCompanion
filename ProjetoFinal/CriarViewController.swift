@@ -11,37 +11,55 @@ import UIKit
 class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate{
     
     @IBOutlet weak var saidaPicker: UIPickerView!
-    
     @IBOutlet weak var chegadaPicker: UIPickerView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
-    let pickerSaida = ["Parada Externa CCEN",
-                       "Saída Principal Cin",
-                       "Parada Externa CTG",
-                       "Parada Externa CAC/CFCH",
-                       "Parada Interna CTG/Oceanografia",
+    @IBOutlet weak var saidaBtn: UIButton!
+    @IBOutlet weak var chegadaBtn: UIButton!
+    @IBOutlet weak var horarioBtn: UIButton!
+    
+    let pickerData = ["CCEN - Parada Externa",
+                       "CIn - Saída Principal",
+                       "CTG - Parada Externa",
+                       "CAC/CFCH - Parada Externa",
+                       "CTG/Oceanografia - Parada Interna",
                        "Niate CTG",
-                       "Entrada Principal CTG",
+                       "CTG/Oceanografia - Entrada Principal",
                        "Area 2",
                        "Centro de Educação Física",
-                       "Parada Externa Grêmio Estudantil",
-                       "Parada Interna CAC",
-                       "Entradas Principais CAC/CFCH",
+                       "Grêmio Estudantil - Parada Externa",
+                       "CAC - Parada Interna",
+                       "CAC/CFCH - Entradas Principais",
                        "CE",
                        "Niate CFCH/CCSA",
                        "CCSA",
-                       "Saída Externa CCSA/Corpo Discente",
-                       "Parada Externa CCS",
-                       "Parada CCB/Niate CCB",
-                       "Parada HC-BR101",
-                       "Parada Biblioteca Central"]
-
+                       "CCSA/Corpo Discente - Saída Externa",
+                       "CCS - Parada Externa",
+                       "CCB/Niate CCB - Parada",
+                       "HC-BR101 - Parada",
+                       "Biblioteca Central - Parada"].sorted()
+    
+    let dateFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.saidaPicker.dataSource = self
         self.saidaPicker.delegate = self
+        
+        self.chegadaPicker.dataSource = self
         self.chegadaPicker.delegate = self
-        self.chegadaPicker.delegate = self
-
+        
+        self.saidaPicker.isHidden = true
+        self.chegadaPicker.isHidden = true
+        self.datePicker.isHidden = true
+        
+        self.datePicker.minimumDate = Date()
+        
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
+        dateFormatter.locale = Locale(identifier: "pt_BR")
+        
         // Do any additional setup after loading the view.
     }
 
@@ -49,18 +67,57 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func saidaBtnAction(_ sender: Any) {
+        saidaPicker.isHidden = !saidaPicker.isHidden
+        chegadaPicker.isHidden = true
+        datePicker.isHidden = true
+    }
+    
+    @IBAction func chegadaBtnAction(_ sender: Any) {
+        saidaPicker.isHidden = true
+        chegadaPicker.isHidden = !chegadaPicker.isHidden
+        datePicker.isHidden = true
+    }
+    
+    @IBAction func horarioBtnAction(_ sender: Any) {
+        saidaPicker.isHidden = true
+        chegadaPicker.isHidden = true
+        datePicker.isHidden = !datePicker.isHidden
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
-        }
+    }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerSaida.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerSaida.sorted()[row]
+        return pickerData.count
     }
     
-
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData.sorted()[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == saidaPicker {
+            saidaBtn.setTitle(pickerData[row], for: .normal)
+        } else if pickerView == chegadaPicker {
+            chegadaBtn.setTitle(pickerData[row], for: .normal)
+        }
+    }
+    
+    @IBAction func datePickerDidSelectRow(_ sender: Any) {
+        let strDate = dateFormatter.string(from: datePicker.date)
+        horarioBtn.setTitle(strDate, for: .normal)
+    }
+    
+    @IBAction func hidePickers(_ sender: Any) {
+        self.saidaPicker.isHidden = true
+        self.chegadaPicker.isHidden = true
+        self.datePicker.isHidden = true
+    }
+    
     /*
     // MARK: - Navigation
 
