@@ -29,6 +29,8 @@ class TrajetosAtivosTVController: UITableViewController {
                 var dbData = snapshot.value as? [String : AnyObject] ?? [:]
                 //let dbKey = snapshot.key as? String
                 
+                self.tableData = []
+                
                 print("Carregou")
                 print(dbData)
                 for d in dbData {
@@ -38,10 +40,14 @@ class TrajetosAtivosTVController: UITableViewController {
                         print(pathData)
                         
                         if let saida = pathData["saida"], let destino = pathData["destino"], let data = pathData["data"] {
-                            self.tableData.append([((saida as! String) + " - " + (destino as! String)), data as! String])
+                            self.tableData.append([((saida as! String) + " -> " + (destino as! String)), data as! String])
                         }
+                        print("TableData")
+                        print(self.tableData)
+                        self.tableView.reloadData()
                     })
                 }
+                
                 //print(dbData.popFirst()?.key)
                 //print(dbKey)
             })

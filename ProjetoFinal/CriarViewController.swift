@@ -146,7 +146,9 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
             usersRef.child(user.uid).child("paths").child(path.key).setValue("true")
         }
         
-        self.performSegue(withIdentifier: "trajetoCriado", sender: self)
+        self.tabBarController?.selectedIndex = 0
+        //self.navigationController?.popViewController(animated: true)
+        //self.performSegue(withIdentifier: "trajetoCriado", sender: self)
     }
     
     /*
