@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate{
     
@@ -42,6 +43,8 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
                        "Biblioteca Central - Parada"].sorted()
     
     let dateFormatter = DateFormatter()
+    
+    let storage = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,7 +124,7 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
     }
     
     @IBAction func handleCriar(_ sender: Any) {
-    
+        
     }
     
     /*

@@ -8,9 +8,11 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class CadastroViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var txtNome: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
     @IBOutlet weak var txtConfirmarSenha: UITextField!
@@ -36,6 +38,7 @@ class CadastroViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func handleTouchCadastro(_ sender: Any) {
+        let nome = txtNome.text
         let email = txtEmail.text
         let senha = txtSenha.text
         let confirmarSenha = txtConfirmarSenha.text
@@ -50,6 +53,14 @@ class CadastroViewController: UIViewController, UITextFieldDelegate {
                 Auth.auth().createUser(withEmail: email!, password: senha!) { (user, error) in
                     
                     if error == nil {
+                        let storage = Database.database().reference()
+                        let usersRef = storage.child("users")
+                        
+                        let user = Auth.auth().currentUser
+                        if let user = user {
+                            usersRef.child(user.uid).setValue(["email": user.email, "name": nome!])
+                        }
+                        
                         self.performSegue(withIdentifier: "cadastroSucedido", sender: self)
                     }
                 }
