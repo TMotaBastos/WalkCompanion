@@ -247,6 +247,7 @@
                         <outlet property="horarioBtn" destination="BtU-eq-MQU" id="HUr-Uu-14o"/>
                         <outlet property="saidaBtn" destination="9mg-2K-ecJ" id="Nyc-5J-7mY"/>
                         <outlet property="saidaPicker" destination="u40-jh-1yz" id="4Rm-Q1-ubG"/>
+                        <segue destination="v2X-sL-FB9" kind="presentation" identifier="trajetoCriado" id="8sH-Bt-biQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySm-6b-Usb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -502,6 +503,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hFL-bC-nuV"/>
+        <segue reference="aLB-ua-iPf"/>
+        <segue reference="8sH-Bt-biQ"/>
     </inferredMetricsTieBreakers>
 </document>

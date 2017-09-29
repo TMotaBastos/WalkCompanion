@@ -7,15 +7,46 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class TrajetosAtivosTVController: UITableViewController {
     
-    var tableData = [["CIn - CAC", "12:00", "RotaCINCAC"], ["CIn - CTG", "15:00", ""], ["CIn - CCSA", "17:00", ""]]
+    //var tableData = [["CIn - CAC", "12:00", "RotaCINCAC"], ["CIn - CTG", "15:00", ""], ["CIn - CCSA", "17:00", ""]]
+    var tableData:[[String]] = []
     var rowSelected:[String]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let storage = Database.database().reference()
+            let pathsRef = storage.child("paths")
+            let userRef = storage.child("users").child(user.uid).child("paths")
+            
+            var refHandle1 = userRef.observe(DataEventType.value, with: { (snapshot) in
+                var dbData = snapshot.value as? [String : AnyObject] ?? [:]
+                //let dbKey = snapshot.key as? String
+                
+                print("Carregou")
+                print(dbData)
+                for d in dbData {
+                    print(d.key)
+                    pathsRef.child(d.key).observe(DataEventType.value, with: { (snapshot) in
+                        var pathData = snapshot.value as? [String : AnyObject] ?? [:]
+                        print(pathData)
+                        
+                        if let saida = pathData["saida"], let destino = pathData["destino"], let data = pathData["data"] {
+                            self.tableData.append([((saida as! String) + " - " + (destino as! String)), data as! String])
+                        }
+                    })
+                }
+                //print(dbData.popFirst()?.key)
+                //print(dbKey)
+            })
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

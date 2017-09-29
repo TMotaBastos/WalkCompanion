@@ -13,6 +13,7 @@
 		9828BE3D1F7C2CE800952565 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9828BE3C1F7C2CE800952565 /* GoogleService-Info.plist */; };
 		9828BE3F1F7C308A00952565 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828BE3E1F7C308A00952565 /* LoginViewController.swift */; };
 		9828BE411F7C30A300952565 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828BE401F7C30A300952565 /* CadastroViewController.swift */; };
+		9828BE431F7ED7BF00952565 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828BE421F7ED7BF00952565 /* Path.swift */; };
 		9893B2D91F757766006F13EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893B2D81F757766006F13EC /* AppDelegate.swift */; };
 		9893B2DB1F757766006F13EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893B2DA1F757766006F13EC /* ViewController.swift */; };
 		9893B2DE1F757766006F13EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9893B2DC1F757766006F13EC /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		9828BE3C1F7C2CE800952565 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9828BE3E1F7C308A00952565 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9828BE401F7C30A300952565 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		9828BE421F7ED7BF00952565 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		9893B2D51F757766006F13EC /* ProjetoFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetoFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9893B2D81F757766006F13EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9893B2DA1F757766006F13EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				9828BE3C1F7C2CE800952565 /* GoogleService-Info.plist */,
 				6A7BB5CE1F7C260400BED523 /* Pinos.swift */,
+				9828BE421F7ED7BF00952565 /* Path.swift */,
 				9893B2D81F757766006F13EC /* AppDelegate.swift */,
 				9893B2DA1F757766006F13EC /* ViewController.swift */,
 				9893B2DC1F757766006F13EC /* Main.storyboard */,
@@ -505,6 +508,7 @@
 				9828BE3F1F7C308A00952565 /* LoginViewController.swift in Sources */,
 				9893B3091F758356006F13EC /* TrajetosAtivosTVCell.swift in Sources */,
 				9893B2D91F757766006F13EC /* AppDelegate.swift in Sources */,
+				9828BE431F7ED7BF00952565 /* Path.swift in Sources */,
 				9893B3071F75823D006F13EC /* TrajetosAtivosTVController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

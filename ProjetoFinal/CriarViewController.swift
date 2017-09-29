@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseDatabase
 
 class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate{
@@ -124,7 +125,28 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
     }
     
     @IBAction func handleCriar(_ sender: Any) {
+        var saida = pickerData[saidaPicker.selectedRow(inComponent: 0)]
+        var destino = pickerData[chegadaPicker.selectedRow(inComponent: 0)]
+        var data = datePicker.date
         
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        let dataStr = formatter.string(from: data)
+        
+        let storage = Database.database().reference()
+        let pathsRef = storage.child("paths")
+        let usersRef = storage.child("users")
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let path = pathsRef.childByAutoId()
+            path.setValue(["saida": saida, "destino": destino, "data": dataStr])
+            path.child("users").child(user.uid).setValue("true")
+            
+            usersRef.child(user.uid).child("paths").child(path.key).setValue("true")
+        }
+        
+        self.performSegue(withIdentifier: "trajetoCriado", sender: self)
     }
     
     /*
