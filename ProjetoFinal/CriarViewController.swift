@@ -28,7 +28,7 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
                        "CAC/CFCH - Parada Externa",
                        "CTG - Parada Interna",
                        "Niate CTG",
-                       "CTG/Oceanografia - Entrada Principal",
+                       "CTG - Entrada Principal",
                        "Area 2",
                        "Centro de Educação Física",
                        "Grêmio Estudantil - Parada Externa",

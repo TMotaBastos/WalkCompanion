@@ -33,6 +33,10 @@ class CadastroViewController: UIViewController, UITextFieldDelegate, UINavigatio
         return true
     }
     
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         fotoPessoa.contentMode = .scaleAspectFit
@@ -60,6 +64,8 @@ class CadastroViewController: UIViewController, UITextFieldDelegate, UINavigatio
     }
     
     @IBAction func handleTouchCadastro(_ sender: Any) {
+        print("topzera")
+        
         let nome = txtNome.text
         let email = txtEmail.text
         let senha = txtSenha.text
@@ -73,6 +79,7 @@ class CadastroViewController: UIViewController, UITextFieldDelegate, UINavigatio
         } else {
             if senha == confirmarSenha {
                 Auth.auth().createUser(withEmail: email!, password: senha!) { (user, error) in
+                    print(error)
                     
                     if error == nil {
                         let storage = Database.database().reference()
