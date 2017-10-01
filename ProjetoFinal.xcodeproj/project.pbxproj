@@ -275,7 +275,7 @@
 				TargetAttributes = {
 					9893B2D41F757766006F13EC = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = Q85MCAS73U;
+						DevelopmentTeam = VC82P2ZNZ9;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -672,11 +672,11 @@
 			baseConfigurationReference = A01EDAA8B3F111DB62B878DE /* Pods-ProjetoFinal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Q85MCAS73U;
+				DEVELOPMENT_TEAM = VC82P2ZNZ9;
 				INFOPLIST_FILE = ProjetoFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.bclo.ProjetoFinal;
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.dso.ProjetoFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -687,11 +687,11 @@
 			baseConfigurationReference = B129533857B4CAFB8243D758 /* Pods-ProjetoFinal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Q85MCAS73U;
+				DEVELOPMENT_TEAM = VC82P2ZNZ9;
 				INFOPLIST_FILE = ProjetoFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.bclo.ProjetoFinal;
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.dso.ProjetoFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
