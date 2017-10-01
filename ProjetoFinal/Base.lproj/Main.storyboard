@@ -38,25 +38,36 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bat-ty-3Hk">
                                 <rect key="frame" x="132" y="337" width="111" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Esqueci a senha"/>
+                                <state key="normal" title="Esqueci a senha">
+                                    <color key="titleColor" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccH-5y-NfD">
                                 <rect key="frame" x="116" y="375" width="142" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Não tem uma conta?"/>
+                                <state key="normal" title="Não tem uma conta?">
+                                    <color key="titleColor" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="pPG-1o-Kbd" kind="show" id="Jiv-LJ-pCa"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="onlinelogomaker-092917-1810-8522" translatesAutoresizingMaskIntoConstraints="NO" id="7T3-Gg-620">
-                                <rect key="frame" x="67" y="105" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7T3-Gg-620">
+                                <rect key="frame" x="34" y="144" width="306" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gw6-x0-WvA">
-                                <rect key="frame" x="116" y="433" width="142" height="30"/>
+                                <rect key="frame" x="90" y="433" width="195" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Login"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="handleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pDy-TF-cJL"/>
                                 </connections>
@@ -139,12 +150,21 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMC-mI-zkA">
                                 <rect key="frame" x="137" y="184" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Editar"/>
+                                <state key="normal" title="Editar">
+                                    <color key="titleColor" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E5-Gt-bw6">
-                                <rect key="frame" x="117" y="433" width="141" height="41"/>
+                                <rect key="frame" x="90" y="462" width="195" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Salvar"/>
+                                <state key="normal" title="Salvar">
+                                    <color key="titleColor" red="0.99381320399999995" green="0.96497009749999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgoundColor">
+                                        <color key="value" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -236,18 +256,13 @@
                                 <rect key="frame" x="0.0" y="402" width="375" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v96-Bf-l8o">
-                                <rect key="frame" x="170" y="299" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Criar"/>
-                                <connections>
-                                    <action selector="handleCriar:" destination="KjF-o7-PGl" eventType="touchUpInside" id="1EM-HA-cel"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mg-2K-ecJ">
                                 <rect key="frame" x="91" y="92" width="268" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Local de Saída"/>
+                                <color key="backgroundColor" red="0.96761976520000004" green="0.96761976520000004" blue="0.96761976520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Local de Saída">
+                                    <color key="titleColor" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="saidaBtnAction:" destination="KjF-o7-PGl" eventType="touchUpInside" id="IgD-yN-FqS"/>
                                 </connections>
@@ -255,7 +270,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvt-dH-xj8">
                                 <rect key="frame" x="91" y="148" width="268" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Local de Chegada"/>
+                                <color key="backgroundColor" red="0.96761976520000004" green="0.96761976520000004" blue="0.96761976520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Local de Chegada">
+                                    <color key="titleColor" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="chegadaBtnAction:" destination="KjF-o7-PGl" eventType="touchUpInside" id="M3e-ix-7FQ"/>
                                 </connections>
@@ -263,7 +281,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtU-eq-MQU">
                                 <rect key="frame" x="91" y="204" width="268" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Horário"/>
+                                <color key="backgroundColor" red="0.96761976522842641" green="0.96761976522842641" blue="0.96761976522842641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Horário">
+                                    <color key="titleColor" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="horarioBtnAction:" destination="KjF-o7-PGl" eventType="touchUpInside" id="kIl-ay-ajt"/>
                                 </connections>
@@ -300,6 +321,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v96-Bf-l8o">
+                                <rect key="frame" x="90" y="329" width="195" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Criar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handleCriar:" destination="KjF-o7-PGl" eventType="touchUpInside" id="1EM-HA-cel"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -359,7 +395,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9LR-u2-ECa">
-                                <rect key="frame" x="16" y="168" width="343" height="146"/>
+                                <rect key="frame" x="16" y="177" width="343" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N0b-LY-uz4">
@@ -397,9 +433,9 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pessoas que irão com você" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSW-rh-kzt">
-                                <rect key="frame" x="16" y="139" width="343" height="21"/>
+                                <rect key="frame" x="16" y="148" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -425,7 +461,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                            <color key="value" red="0.81230813264846802" green="0.26853957772254944" blue="0.3110564649105072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="v2X-sL-FB9" kind="relationship" relationship="viewControllers" id="fP1-4A-GHt"/>
                         <segue destination="dtz-h5-u19" kind="relationship" relationship="viewControllers" id="x2S-1B-5eK"/>
@@ -436,13 +483,19 @@
             </objects>
             <point key="canvasLocation" x="1860" y="140.77961019490255"/>
         </scene>
-        <!--Configurações-->
+        <!--Editar Perfil-->
         <scene sceneID="oDg-p3-ZwV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t7Z-JD-PfK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Configurações" image="edit_profile" selectedImage="edit_profile" id="vO2-aG-PfV"/>
+                    <tabBarItem key="tabBarItem" title="Editar Perfil" image="edit_profile" selectedImage="edit_profile" id="vO2-aG-PfV">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.78120136260986328" green="0.14620497822761536" blue="0.19825553894042969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rMH-xw-FnC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rMH-xw-FnC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -459,7 +512,13 @@
         <scene sceneID="tVU-aO-Q2z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dtz-h5-u19" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Criar" image="create" selectedImage="create" id="DTb-xC-iu5"/>
+                    <tabBarItem key="tabBarItem" title="Criar" image="create" selectedImage="create" id="DTb-xC-iu5">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                                <color key="value" red="0.7732197642326355" green="0.15906655788421631" blue="0.20737048983573914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gwu-ch-S6i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -521,14 +580,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ld-zI-Acc">
-                                <rect key="frame" x="106" y="414" width="158" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cadastrar"/>
-                                <connections>
-                                    <action selector="handleTouchCadastro:" destination="pPG-1o-Kbd" eventType="touchUpInside" id="Ixt-87-zGc"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oKQ-qN-U5e">
                                 <rect key="frame" x="137" y="72" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -536,7 +587,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEV-JY-DIy">
                                 <rect key="frame" x="137" y="175" width="100" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Editar"/>
+                                <state key="normal" title="Editar">
+                                    <color key="titleColor" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="escolherFoto:" destination="pPG-1o-Kbd" eventType="touchUpInside" id="fzV-XQ-53t"/>
                                 </connections>
@@ -548,6 +601,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ld-zI-Acc">
+                                <rect key="frame" x="90" y="416" width="195" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cadastrar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                                        <color key="value" red="0.79683488607406616" green="0.19972655177116394" blue="0.24904626607894897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handleTouchCadastro:" destination="pPG-1o-Kbd" eventType="touchUpInside" id="Ixt-87-zGc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -577,7 +645,13 @@
         <scene sceneID="MMQ-7X-sGF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v2X-sL-FB9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trajetos Ativos" image="paths" selectedImage="paths" id="ePh-Cl-w7k"/>
+                    <tabBarItem key="tabBarItem" title="Trajetos Ativos" image="paths" selectedImage="paths" id="ePh-Cl-w7k" colorLabel="IBBuiltInLabel-Yellow">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.77328366041183472" green="0.14223068952560425" blue="0.19434854388237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NVb-N7-FKs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -614,11 +688,11 @@
     <resources>
         <image name="create" width="24" height="32"/>
         <image name="edit_profile" width="24" height="23"/>
-        <image name="onlinelogomaker-092917-1810-8522" width="320" height="203"/>
+        <image name="logo" width="320" height="58"/>
         <image name="paths" width="31" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hFL-bC-nuV"/>
-        <segue reference="fP1-4A-GHt"/>
+        <segue reference="aLB-ua-iPf"/>
+        <segue reference="8sH-Bt-biQ"/>
     </inferredMetricsTieBreakers>
 </document>
