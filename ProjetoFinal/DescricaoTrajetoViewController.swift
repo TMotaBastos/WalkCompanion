@@ -57,7 +57,7 @@ class DescricaoTrajetoViewController: UIViewController, MKMapViewDelegate, UICol
         
     }
     func initPinos () {
-        pinos.append(Pinos(latitude: -8.05649, longitude: -34.9535, nome: "Area2"))
+        pinos.append(Pinos(latitude: -8.05649, longitude: -34.9535, nome: "Area 2"))
         pinos.append(Pinos(latitude:-8.05768,longitude:-34.95219,nome:"CCEN - Parada Externa"))
         pinos.append(Pinos(latitude:-8.05573,longitude:-34.95115,nome:"CIn - Saída Principal"))
         pinos.append(Pinos(latitude:-8.05512,longitude: -34.95275,nome:"Niate CTG"))
@@ -79,7 +79,9 @@ class DescricaoTrajetoViewController: UIViewController, MKMapViewDelegate, UICol
         pinos.append(Pinos(latitude:-8.051296,longitude:-34.951412,nome:"Biblioteca Central - Parada"))
         
         for pino in pinos {
-            pino.adcPonto(mapView)
+            if pino.nome == saida || pino.nome == destino{
+                pino.adcPonto(mapView)
+            }
         }
     }
     
