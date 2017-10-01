@@ -13,6 +13,7 @@ import FirebaseStorage
 
 class CadastroViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    @IBOutlet weak var txtEmailSec: UITextField!
     @IBOutlet weak var txtNome: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
