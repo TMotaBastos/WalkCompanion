@@ -111,6 +111,10 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lgO-ak-7UA">
                                 <rect key="frame" x="16" y="232" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -118,6 +122,10 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail institucional" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ek8-Qs-pxA">
                                 <rect key="frame" x="16" y="270" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -150,9 +158,12 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMC-mI-zkA">
                                 <rect key="frame" x="137" y="184" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Editar">
+                                <state key="normal" title="Editar Foto">
                                     <color key="titleColor" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="editarFoto:" destination="Lhq-VZ-al7" eventType="touchUpInside" id="ZNd-zy-YYC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E5-Gt-bw6">
                                 <rect key="frame" x="90" y="462" width="195" height="35"/>
@@ -165,6 +176,24 @@
                                         <color key="value" red="0.78121715784072876" green="0.14199724793434143" blue="0.19385549426078796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="salvarModificacoes:" destination="Lhq-VZ-al7" eventType="touchUpInside" id="iYV-dE-Mav"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rop-dI-USM">
+                                <rect key="frame" x="90" y="505" width="195" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sair">
+                                    <color key="titleColor" red="0.99381320399999995" green="0.96497009749999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="0.78121715780000001" green="0.14199724790000001" blue="0.19385549429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sairConta:" destination="Lhq-VZ-al7" eventType="touchUpInside" id="wQE-hY-SlC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -174,6 +203,14 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Configurações" id="OPB-3g-9Wd"/>
+                    <connections>
+                        <outlet property="imgPerfil" destination="gXu-Ca-bM5" id="DKC-pV-WQZ"/>
+                        <outlet property="txtConfirmarSenha" destination="z6l-ZY-5Jj" id="UXJ-Aj-ROf"/>
+                        <outlet property="txtEmail" destination="ek8-Qs-pxA" id="t0U-Yf-4AP"/>
+                        <outlet property="txtEmailSecundario" destination="7zB-Ql-9c6" id="hHg-eN-hde"/>
+                        <outlet property="txtNome" destination="lgO-ak-7UA" id="yeK-0s-aDk"/>
+                        <outlet property="txtSenha" destination="YeT-Ss-Lpc" id="sW4-f5-mm9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouk-iO-tPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="I1F-IB-v5s">
@@ -197,7 +234,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wLH-Za-3A6" id="srv-R8-aFu">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="72.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="73"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsV-NR-Zoj">
@@ -495,7 +532,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rMH-xw-FnC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rMH-xw-FnC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
