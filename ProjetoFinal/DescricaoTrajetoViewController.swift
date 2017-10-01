@@ -11,7 +11,7 @@ import MapKit
 import FirebaseDatabase
 import FirebaseStorage
 
-class DescricaoTrajetoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class DescricaoTrajetoViewController: UIViewController, MKMapViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     struct Items {
         let image: UIImage
@@ -48,6 +48,12 @@ class DescricaoTrajetoViewController: UIViewController, UICollectionViewDataSour
         self.PessoasCollection.delegate = self
         self.PessoasCollection.dataSource = self
         //pino.adcPonto(mapView,pinos)
+        mapView.delegate = self
+        func centerMapOnLocation(location: CLLocation) {
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,1500, 1500)
+            mapView.setRegion(coordinateRegion, animated: true)
+        }
+        centerMapOnLocation(location: CLLocation(latitude: -8.051779, longitude: -34.950013))
         
     }
     func initPinos () {
@@ -129,13 +135,6 @@ class DescricaoTrajetoViewController: UIViewController, UICollectionViewDataSour
         return cell
     }
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = UIColor(colorLiteralRed: 0.78, green:  0.192, blue:  0.141, alpha: 1)
-        renderer.lineWidth = 4.0
-        
-        return renderer
-    }
     
     
     
