@@ -33,6 +33,10 @@ class CadastroViewController: UIViewController, UITextFieldDelegate, UINavigatio
         return true
     }
     
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         fotoPessoa.contentMode = .scaleAspectFit
