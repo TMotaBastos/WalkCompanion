@@ -91,7 +91,25 @@ class TrajetosAtivosTVController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == .delete) {
             // TODO: remover do banco de dados
-            //tableView.deleteRows(at: [indexPath], with: .automatic)
+            print("Delete")
+            print(indexPath)
+            print(tableData[indexPath[1]])
+            let pathId = tableData[indexPath[1]][0].replacingOccurrences(of: "/", with: "-")
+            let dataId = tableData[indexPath[1]][1].replacingOccurrences(of: "/", with: "-")
+            
+            let user = Auth.auth().currentUser
+            let storage = Database.database().reference()
+            let pathsRef = storage.child("paths")
+            let usersRef = storage.child("users")
+            
+            let key = pathId + " -> " + dataId
+            if let user = user {
+                pathsRef.child(key).child("users").child(user.uid).setValue(nil)
+                usersRef.child(user.uid).child("paths").child(key).setValue(nil)
+            }
+            tableData.remove(at: indexPath[1])
+            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
     

@@ -129,9 +129,15 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
         var destino = pickerData[chegadaPicker.selectedRow(inComponent: 0)]
         var data = datePicker.date
         
+        let saidaId = saida.replacingOccurrences(of: "/", with: "-")
+        let destinoId = destino.replacingOccurrences(of: "/", with: "-")
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        let formatter2 = DateFormatter()
+        formatter2.dateFormat = "dd-MM-yyyy HH:mm"
         let dataStr = formatter.string(from: data)
+        let dataStrId = formatter2.string(from: data)
         
         let storage = Database.database().reference()
         let pathsRef = storage.child("paths")
@@ -139,11 +145,29 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
         
         let user = Auth.auth().currentUser
         if let user = user {
-            let path = pathsRef.childByAutoId()
-            path.setValue(["saida": saida, "destino": destino, "data": dataStr])
-            path.child("users").child(user.uid).setValue("true")
+            let key = saidaId + " -> " + destinoId + " -> " + dataStrId
+            pathsRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                if snapshot.hasChild(key) {
+                    pathsRef.child(key).child("users").child(user.uid).setValue("true")
+                } else {
+                    pathsRef.child(key).setValue(["saida": saida, "destino": destino, "data": dataStr])
+                }
+                usersRef.child(user.uid).child("paths").child(key).setValue("true")
+            })
             
-            usersRef.child(user.uid).child("paths").child(path.key).setValue("true")
+            ////let path = pathsRef.childByAutoId()
+            //let path = pathsRef.child(saidaId + " -> " + destinoId + " -> " + dataStrId)
+            //path.setValue(["saida": saida, "destino": destino, "data": dataStr])
+            //path.child("users").child(user.uid).setValue("true")
+            /*let key = saidaId + " -> " + destinoId + " -> " + dataStrId
+            let post = ["saida": saida, "destino": destino, "data": dataStr]
+            let post2 = [user.uid: "true"]
+            let childUpdates = ["/paths/\(key)": post,
+                                "/paths/\(key)/users": post2]
+            
+            storage.updateChildValues(childUpdates)*/
+            
+            //usersRef.child(user.uid).child("paths").child(path.key).setValue("true")
         }
         
         self.tabBarController?.selectedIndex = 0
