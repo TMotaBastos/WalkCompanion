@@ -50,7 +50,7 @@ class DescricaoTrajetoViewController: UIViewController, MKMapViewDelegate, UICol
         //pino.adcPonto(mapView,pinos)
         mapView.delegate = self
         func centerMapOnLocation(location: CLLocation) {
-            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,1500, 1500)
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,2000, 2000)
             mapView.setRegion(coordinateRegion, animated: true)
         }
         centerMapOnLocation(location: CLLocation(latitude: -8.051779, longitude: -34.950013))
