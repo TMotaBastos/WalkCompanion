@@ -88,6 +88,13 @@ class TrajetosAtivosTVController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if(editingStyle == .delete) {
+            // TODO: remover do banco de dados
+            //tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewTrajeto" {
             let destiny = segue.destination as! DescricaoTrajetoViewController
