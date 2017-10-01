@@ -106,19 +106,42 @@ class PerfilViewController: ViewController, UITextFieldDelegate, UINavigationCon
     }
     
     @IBAction func salvarModificacoes(_ sender: Any) {
-        /*let storage = Database.database().reference()
+        print("apertou em salvar")
+        
+        let storage = Database.database().reference()
         let imageStorage = Storage.storage().reference()
         let user = Auth.auth().currentUser
         
         if let user = user {
+            if txtEmailSecundario.text != "" {
+                let emailSecundario = txtEmailSecundario.text
+                
+                let userRef = storage.child("users").child(user.uid)
+                userRef.child("emailSecundario").setValue(emailSecundario)
+            }
+            let imageRef = imageStorage.child("images").child(user.uid).child("profile.jpg")
             
+            let sendImage = UIImageJPEGRepresentation(self.imgPerfil.image!, 0.5)
             
-            let userRef = storage.child("users").child(user.uid)
-        }*/
+            let uploadTask = imageRef.putData(sendImage!, metadata: nil) { (metadata, error) in
+                print("foi")
+                
+                let alert = UIAlertController(title: "Sucesso!", message: "Seus dados foram atualizados com sucesso!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func sairConta(_ sender: Any) {
+        try! Auth.auth().signOut()
+        //self.navigationController?.popToRootViewController(animated: true)
+        //self.navigationController?.popToViewController(LoginViewController, animated: true)
         
+        let vc = self.navigationController?.viewControllers.filter({$0 is LoginViewController}).first
+        print(self.navigationController?.viewControllers)
+        self.navigationController?.popToViewController(vc!, animated: true)
     }
     
     /*
