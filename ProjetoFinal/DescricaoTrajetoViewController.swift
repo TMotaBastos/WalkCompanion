@@ -8,8 +8,15 @@
 
 import UIKit
 import MapKit
+import FirebaseDatabase
+import FirebaseStorage
 
 class DescricaoTrajetoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    struct Items {
+        let image: UIImage
+        let name: String
+    }
     
     var obj:[String]?
     
@@ -19,15 +26,25 @@ class DescricaoTrajetoViewController: UIViewController, UICollectionViewDataSour
     @IBOutlet weak var PessoasCollection: UICollectionView!
     @IBOutlet weak var mapView: MKMapView!
     var pinos:[Pinos] = []
-    var pessoas = [["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"]]
+    var pessoas:[Items] = []
+    //var pessoas = [["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"],["dog","cachorrinho"]]
     
+    var saida:String = ""
+    var destino:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //var ret = obj![0].characters.split(separator: " -> ")
+        var ret = obj![0].components(separatedBy: " -> ")
+        print(ret)
+        saida = ret[0]
+        destino = ret[1]
+        
         self.lblRoute.text = obj![0]
         self.lblTime.text = obj![1]
         initPinos()
+        loadPeople()
         self.PessoasCollection.delegate = self
         self.PessoasCollection.dataSource = self
         //pino.adcPonto(mapView,pinos)
@@ -60,6 +77,38 @@ class DescricaoTrajetoViewController: UIViewController, UICollectionViewDataSour
         }
     }
     
+    func loadPeople() {
+        let pathId = obj![0].replacingOccurrences(of: "/", with: "-")
+        let dataId = obj![1].replacingOccurrences(of: "/", with: "-")
+        let key = pathId + " -> " + dataId
+        
+        let storage = Database.database().reference()
+        let imageStorage = Storage.storage().reference()
+        let pathsRef = storage.child("paths").child(key).child("users")
+        let userImageRef = imageStorage.child("images")
+        let usersRef = storage.child("users")
+        
+        pathsRef.observe(DataEventType.value, with: { (snapshot) in
+            var pathData = snapshot.value as? [String : AnyObject] ?? [:]
+            print(pathData)
+            
+            for d in pathData {
+                userImageRef.child(d.key).child("profile.jpg").getData(maxSize: 2 * 1024 * 1024) { data, error in
+                    let image = UIImage(data: data!)
+                    
+                    usersRef.child(d.key).observe(DataEventType.value, with: { (snapshot) in
+                        var pathData = snapshot.value as? [String : AnyObject] ?? [:]
+                        print(pathData)
+                        
+                        self.pessoas.append(Items(image: image!, name: pathData["name"] as! String))
+                        self.PessoasCollection.reloadData()
+                    })
+                }
+            }
+            //self.tableView.reloadData()
+        })
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,8 +121,11 @@ class DescricaoTrajetoViewController: UIViewController, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pessoas", for: indexPath) as! PessoasCollectionViewCell
         
-        cell.fotoPessoa.image = UIImage (named: pessoas[indexPath.row][0])
-        cell.nome.text = pessoas[indexPath.row][1]
+        //cell.fotoPessoa.image = UIImage (named: pessoas[indexPath.row][0])
+        //cell.nome.text = pessoas[indexPath.row][1]
+        cell.fotoPessoa.image = pessoas[indexPath.row].image
+        cell.nome.text = pessoas[indexPath.row].name
+        
         return cell
     }
     

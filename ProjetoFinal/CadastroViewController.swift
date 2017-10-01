@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class CadastroViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
@@ -88,6 +89,15 @@ class CadastroViewController: UIViewController, UITextFieldDelegate, UINavigatio
                         let user = Auth.auth().currentUser
                         if let user = user {
                             usersRef.child(user.uid).setValue(["email": user.email, "name": nome!])
+                            
+                            let imageStorage = Storage.storage().reference()
+                            let imageRef = imageStorage.child("images").child(user.uid).child("profile.jpg")
+                            
+                            let sendImage = UIImageJPEGRepresentation(self.fotoPessoa.image!, 0.5)
+                            
+                            let uploadTask = imageRef.putData(sendImage!, metadata: nil) { (metadata, error) in
+                                print("foi")
+                            }
                         }
                         
                         self.performSegue(withIdentifier: "cadastroSucedido", sender: self)

@@ -151,6 +151,7 @@ class CriarViewController: UIViewController , UIPickerViewDataSource, UIPickerVi
                     pathsRef.child(key).child("users").child(user.uid).setValue("true")
                 } else {
                     pathsRef.child(key).setValue(["saida": saida, "destino": destino, "data": dataStr])
+                    pathsRef.child(key).child("users").child(user.uid).setValue("true")
                 }
                 usersRef.child(user.uid).child("paths").child(key).setValue("true")
             })
