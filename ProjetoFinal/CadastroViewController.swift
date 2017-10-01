@@ -24,6 +24,7 @@ class CadastroViewController: UIViewController, UITextFieldDelegate, UINavigatio
         fotoPicker.allowsEditing = false
         fotoPicker.sourceType = .photoLibrary
         fotoPicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        fotoPicker.modalPresentationStyle = .popover
         present(fotoPicker, animated: true, completion: nil)
     }
     
@@ -40,7 +41,7 @@ class CadastroViewController: UIViewController, UITextFieldDelegate, UINavigatio
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
