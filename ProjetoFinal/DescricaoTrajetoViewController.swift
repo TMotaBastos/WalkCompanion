@@ -100,6 +100,8 @@ class DescricaoTrajetoViewController: UIViewController, MKMapViewDelegate, UICol
             var pathData = snapshot.value as? [String : AnyObject] ?? [:]
             print(pathData)
             
+            self.pessoas = []
+            
             for d in pathData {
                 userImageRef.child(d.key).child("profile.jpg").getData(maxSize: 2 * 1024 * 1024) { data, error in
                     let image = UIImage(data: data!)

@@ -39,6 +39,8 @@ class TrajetosAtivosTVController: UITableViewController {
                         var pathData = snapshot.value as? [String : AnyObject] ?? [:]
                         print(pathData)
                         
+                        self.tableData = []
+                        
                         if let saida = pathData["saida"], let destino = pathData["destino"], let data = pathData["data"] {
                             self.tableData.append([((saida as! String) + " -> " + (destino as! String)), data as! String])
                         }
@@ -110,6 +112,7 @@ class TrajetosAtivosTVController: UITableViewController {
             tableData.remove(at: indexPath[1])
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.reloadData()
         }
     }
     
