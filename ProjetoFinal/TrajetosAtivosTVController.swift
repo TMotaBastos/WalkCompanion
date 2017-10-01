@@ -107,7 +107,7 @@ class TrajetosAtivosTVController: UITableViewController {
                 pathsRef.child(key).child("users").child(user.uid).setValue(nil)
                 usersRef.child(user.uid).child("paths").child(key).setValue(nil)
             }
-            tableData.remove(at: indexPath[1])
+            //tableData.remove(at: indexPath[1])
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.reloadData()
