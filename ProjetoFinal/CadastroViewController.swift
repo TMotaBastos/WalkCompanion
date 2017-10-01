@@ -10,17 +10,37 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class CadastroViewController: UIViewController, UITextFieldDelegate {
+class CadastroViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var txtNome: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
     @IBOutlet weak var txtConfirmarSenha: UITextField!
+    @IBOutlet weak var fotoPessoa: UIImageView!
     
+    let fotoPicker = UIImagePickerController()
+    
+    @IBAction func escolherFoto(_ sender: UIButton) {
+        fotoPicker.allowsEditing = false
+        fotoPicker.sourceType = .photoLibrary
+        fotoPicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(fotoPicker, animated: true, completion: nil)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        fotoPessoa.contentMode = .scaleAspectFit
+        fotoPessoa.image = chosenImage
+        dismiss(animated:true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
     }
     
     override func viewDidLoad() {
@@ -29,6 +49,7 @@ class CadastroViewController: UIViewController, UITextFieldDelegate {
         txtEmail.delegate = self
         txtSenha.delegate = self
         txtConfirmarSenha.delegate = self
+        fotoPicker.delegate = self
         // Do any additional setup after loading the view.
     }
 
