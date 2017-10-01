@@ -10,7 +10,6 @@
 		6A7BB5C91F79941600BED523 /* CriarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7BB5C81F79941600BED523 /* CriarViewController.swift */; };
 		6A7BB5CF1F7C260400BED523 /* Pinos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7BB5CE1F7C260400BED523 /* Pinos.swift */; };
 		6AA82A291F7EE6EF00E21745 /* PessoasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA82A281F7EE6EF00E21745 /* PessoasCollectionViewCell.swift */; };
-		79F366B51F815C0E00846809 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79F366B41F815C0E00846809 /* GoogleService-Info.plist */; };
 		79F366B71F81603500846809 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F366B61F81603500846809 /* PerfilViewController.swift */; };
 		8E66971596AE74D1B3EEE0CB /* Pods_ProjetoFinalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCD3B9C148DBCF7514B2E62 /* Pods_ProjetoFinalTests.framework */; };
 		9828BE3F1F7C308A00952565 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828BE3E1F7C308A00952565 /* LoginViewController.swift */; };
@@ -27,6 +26,7 @@
 		9893B3091F758356006F13EC /* TrajetosAtivosTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893B3081F758356006F13EC /* TrajetosAtivosTVCell.swift */; };
 		9893B30B1F758993006F13EC /* DescricaoTrajetoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9893B30A1F758993006F13EC /* DescricaoTrajetoViewController.swift */; };
 		A488EEFD1AE8F00551F7270B /* Pods_ProjetoFinalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E32A85C60BDC1B217031AC /* Pods_ProjetoFinalUITests.framework */; };
+		B407FD401F81661300FFCD48 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B407FD3F1F81661300FFCD48 /* GoogleService-Info.plist */; };
 		D4CB587CFE5CBF975C17DA64 /* Pods_ProjetoFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C417B2426AB9BED23DE35BE /* Pods_ProjetoFinal.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,6 @@
 		6A7BB5C81F79941600BED523 /* CriarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriarViewController.swift; sourceTree = "<group>"; };
 		6A7BB5CE1F7C260400BED523 /* Pinos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pinos.swift; sourceTree = "<group>"; };
 		6AA82A281F7EE6EF00E21745 /* PessoasCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PessoasCollectionViewCell.swift; sourceTree = "<group>"; };
-		79F366B41F815C0E00846809 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79F366B61F81603500846809 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		9828BE3E1F7C308A00952565 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9828BE401F7C30A300952565 /* CadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		A01EDAA8B3F111DB62B878DE /* Pods-ProjetoFinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoFinal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjetoFinal/Pods-ProjetoFinal.debug.xcconfig"; sourceTree = "<group>"; };
 		B0E32A85C60BDC1B217031AC /* Pods_ProjetoFinalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoFinalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B129533857B4CAFB8243D758 /* Pods-ProjetoFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoFinal.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjetoFinal/Pods-ProjetoFinal.release.xcconfig"; sourceTree = "<group>"; };
+		B407FD3F1F81661300FFCD48 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DFCD3B9C148DBCF7514B2E62 /* Pods_ProjetoFinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoFinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,7 +159,7 @@
 		9893B2D71F757766006F13EC /* ProjetoFinal */ = {
 			isa = PBXGroup;
 			children = (
-				79F366B41F815C0E00846809 /* GoogleService-Info.plist */,
+				B407FD3F1F81661300FFCD48 /* GoogleService-Info.plist */,
 				6A7BB5CE1F7C260400BED523 /* Pinos.swift */,
 				9828BE421F7ED7BF00952565 /* Path.swift */,
 				9893B2D81F757766006F13EC /* AppDelegate.swift */,
@@ -275,7 +275,7 @@
 				TargetAttributes = {
 					9893B2D41F757766006F13EC = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = VC82P2ZNZ9;
+						DevelopmentTeam = N6YYKMM3XA;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -323,7 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9893B2E31F757766006F13EC /* LaunchScreen.storyboard in Resources */,
-				79F366B51F815C0E00846809 /* GoogleService-Info.plist in Resources */,
+				B407FD401F81661300FFCD48 /* GoogleService-Info.plist in Resources */,
 				9893B2E01F757766006F13EC /* Assets.xcassets in Resources */,
 				9893B2DE1F757766006F13EC /* Main.storyboard in Resources */,
 			);
@@ -672,11 +672,11 @@
 			baseConfigurationReference = A01EDAA8B3F111DB62B878DE /* Pods-ProjetoFinal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VC82P2ZNZ9;
+				DEVELOPMENT_TEAM = N6YYKMM3XA;
 				INFOPLIST_FILE = ProjetoFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.dso.ProjetoFinal;
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.jmsmf.ProjetoFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -687,11 +687,11 @@
 			baseConfigurationReference = B129533857B4CAFB8243D758 /* Pods-ProjetoFinal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VC82P2ZNZ9;
+				DEVELOPMENT_TEAM = N6YYKMM3XA;
 				INFOPLIST_FILE = ProjetoFinal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.dso.ProjetoFinal;
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.jmsmf.ProjetoFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
