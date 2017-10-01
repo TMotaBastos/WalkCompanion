@@ -12,4 +12,7 @@ class PessoasCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nome: UILabel!
     @IBOutlet weak var fotoPessoa: UIImageView!
+    
+    
+    
 }
