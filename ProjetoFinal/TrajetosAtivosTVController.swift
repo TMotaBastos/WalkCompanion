@@ -88,7 +88,7 @@ class TrajetosAtivosTVController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    /*override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == .delete) {
             // TODO: remover do banco de dados
             print("Delete")
@@ -112,7 +112,7 @@ class TrajetosAtivosTVController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.reloadData()
         }
-    }
+    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewTrajeto" {
