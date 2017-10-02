@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--Configurações-->
+        <!--Editar Perfil-->
         <scene sceneID="PXP-Yy-CYB">
             <objects>
                 <viewController id="Lhq-VZ-al7" customClass="PerfilViewController" customModule="ProjetoFinal" customModuleProvider="target" sceneMemberID="viewController">
@@ -202,7 +202,7 @@
                             <outletCollection property="gestureRecognizers" destination="I1F-IB-v5s" appends="YES" id="AtR-ky-3xu"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Configurações" id="OPB-3g-9Wd"/>
+                    <navigationItem key="navigationItem" title="Editar Perfil" id="OPB-3g-9Wd"/>
                     <connections>
                         <outlet property="imgPerfil" destination="gXu-Ca-bM5" id="DKC-pV-WQZ"/>
                         <outlet property="txtConfirmarSenha" destination="z6l-ZY-5Jj" id="UXJ-Aj-ROf"/>
@@ -691,9 +691,10 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NVb-N7-FKs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NVb-N7-FKs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.78121715780000001" green="0.14199724790000001" blue="0.19385549429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -731,7 +732,7 @@
         <image name="user" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aLB-ua-iPf"/>
+        <segue reference="hFL-bC-nuV"/>
         <segue reference="8sH-Bt-biQ"/>
     </inferredMetricsTieBreakers>
 </document>
